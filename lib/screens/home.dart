@@ -144,6 +144,7 @@ class _MainState extends State<Main> {
               children: <Widget>[
                 Container(
                   padding: EdgeInsets.only(
+                    
                     top: 60,
                     left: 30,
                     right: 30,
