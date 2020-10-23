@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ThemeBuilder(
       statusBarColorBuilder: (theme) => theme.dialogBackgroundColor,
+      // this statusBarBuilder is not working
       defaultThemeMode: ThemeMode.light,
       darkTheme: ThemeData(
         colorScheme: ColorScheme(
