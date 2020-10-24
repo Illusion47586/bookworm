@@ -147,19 +147,20 @@ Future<void> showBookStatusBottomSheet(
                   height: kMasterPadding,
                 ),
                 TextBox(
-                  helperText: "Chapter name",
-                  controller: chapterNameController,
+                  helperText: "Chapter number",
+                  controller: chapterNumberController,
+                  input: TextInputType.number,
                   context: context,
                 ),
                 SizedBox(
                   height: kMasterPadding - 5,
                 ),
                 TextBox(
-                  helperText: "Chapter number",
-                  controller: chapterNumberController,
-                  input: TextInputType.number,
+                  helperText: "Chapter name",
+                  controller: chapterNameController,
                   context: context,
                 ),
+                
                 SizedBox(
                   height: kMasterPadding - 5,
                 ),
@@ -172,7 +173,6 @@ Future<void> showBookStatusBottomSheet(
                 SizedBox(
                   height: kMasterPadding - 5,
                 ),
-                returnCompulsoryAlert(context),
                 SizedBox(
                   height: kMasterPadding,
                 ),
@@ -186,7 +186,7 @@ Future<void> showBookStatusBottomSheet(
                           title: bookName,
                           authorName: authorName,
                           bookCoverURL: url,
-                          chapterName: chapterNameController.text,
+                          chapterName: chapterNameController.text ?? null,
                           chapterNumber:
                               int.parse(chapterNumberController.text),
                           pageNumber: int.parse(pageNumberController.text),
@@ -197,7 +197,7 @@ Future<void> showBookStatusBottomSheet(
                       );
                     } else {
                       justUpdatingFunction(
-                        chapterNameController.text,
+                        chapterNameController.text ?? null,
                         int.parse(chapterNumberController.text),
                         int.parse(pageNumberController.text),
                       );
