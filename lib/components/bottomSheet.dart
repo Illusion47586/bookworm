@@ -160,7 +160,6 @@ Future<void> showBookStatusBottomSheet(
                   controller: chapterNameController,
                   context: context,
                 ),
-                
                 SizedBox(
                   height: kMasterPadding - 5,
                 ),

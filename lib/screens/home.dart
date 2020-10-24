@@ -78,13 +78,13 @@ class _MainState extends State<Main> {
 
     // FOR DEBUG PURPOSES ONLY
 
-    await fltrNotification.show(
-      index,
-      "Time to read📚: $book_name",
-      "Reading time👀",
-      generalNotificationDetails,
-      payload: book_name,
-    );
+    // await fltrNotification.show(
+    //   index,
+    //   "Time to read📚: $book_name",
+    //   "Reading time👀",
+    //   generalNotificationDetails,
+    //   payload: book_name,
+    // );
   }
 
   Future _removeNotification(int index) async {
@@ -144,7 +144,6 @@ class _MainState extends State<Main> {
               children: <Widget>[
                 Container(
                   padding: EdgeInsets.only(
-                    
                     top: 60,
                     left: 30,
                     right: 30,
