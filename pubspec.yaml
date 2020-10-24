@@ -24,9 +24,8 @@ dependencies:
   stacked_themes:
   data_connection_checker: ^0.3.4
   step_progress_indicator: ^0.2.4+7
-
-dependency_overrides:
-#  dartx: ^0.3.0
+  notification_permissions: ^0.4.8
+  app_settings: ^4.0.4
 
 dev_dependencies:
   flutter_test:

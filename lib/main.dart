@@ -4,6 +4,7 @@ import 'package:bookworm/utilities/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
+import 'package:notification_permissions/notification_permissions.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 import 'models/books.dart';
@@ -13,6 +14,15 @@ import 'package:path_provider/path_provider.dart' as path_provider;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ThemeManager.initialise();
+
+  Future<PermissionStatus> permissionStatus =
+      NotificationPermissions.getNotificationPermissionStatus();
+
+  if (permissionStatus == PermissionStatus.values ||
+      permissionStatus == PermissionStatus.provisional ||
+      permissionStatus == PermissionStatus.unknown) {
+    permissionStatus = NotificationPermissions.requestNotificationPermissions();
+  }
 
   final appDocumentDir = await path_provider.getApplicationDocumentsDirectory();
   await Hive.init(appDocumentDir.path);

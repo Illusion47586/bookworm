@@ -26,7 +26,7 @@ class _MainState extends State<Main> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    var androidInitialize = AndroidInitializationSettings('@drawable/app_icon');
+    var androidInitialize = AndroidInitializationSettings('app_icon');
     var iOSinitialize = IOSInitializationSettings();
     var initializationsSettings =
         InitializationSettings(androidInitialize, iOSinitialize);
@@ -62,6 +62,7 @@ class _MainState extends State<Main> {
       "illusion",
       "Bookworm channel",
       importance: Importance.Max,
+      playSound: true,
     );
     var iSODetails = IOSNotificationDetails();
     var generalNotificationDetails =

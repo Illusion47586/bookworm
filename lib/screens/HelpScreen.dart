@@ -1,5 +1,6 @@
+import 'package:app_settings/app_settings.dart';
+
 import '../components/button.dart';
-import '../utilities/variables.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart' as url;
@@ -8,6 +9,7 @@ import 'package:url_launcher/url_launcher.dart' as url;
 
 class HelpScreen extends StatefulWidget {
   static String routename = 'HelpScreen';
+
   @override
   _HelpScreenState createState() => _HelpScreenState();
 }
@@ -77,7 +79,7 @@ class _HelpScreenState extends State<HelpScreen> {
                               decoration: BoxDecoration(
                                 color: themeData.backgroundColor,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
+                                BorderRadius.all(Radius.circular(10)),
                                 border: Border.all(
                                   color: Color(0xff999999),
                                   width: 1.25,
@@ -141,6 +143,20 @@ class _HelpScreenState extends State<HelpScreen> {
                       ),
                     ),
                   ],
+                ),
+                Positioned(
+                  bottom: 76,
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: Button(
+                      context: context,
+                      title: "Open app settings",
+                      icon: EvaIcons.settings,
+                      function: () {
+                        AppSettings.openAppSettings();
+                      },
+                    ),
+                  ),
                 ),
                 Positioned(
                   bottom: 0,
