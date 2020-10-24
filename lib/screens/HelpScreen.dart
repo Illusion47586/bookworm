@@ -79,7 +79,7 @@ class _HelpScreenState extends State<HelpScreen> {
                               decoration: BoxDecoration(
                                 color: themeData.backgroundColor,
                                 borderRadius:
-                                BorderRadius.all(Radius.circular(10)),
+                                    BorderRadius.all(Radius.circular(10)),
                                 border: Border.all(
                                   color: Color(0xff999999),
                                   width: 1.25,
